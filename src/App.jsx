@@ -1,31 +1,15 @@
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import ProductListing from "./pages/ProductListing";
-import ProductDetails from "./pages/ProductDetails";
-
+import React from 'react'
+// import Card from './Card'
+import Hook from './Hook'
 const App = () => {
-  const [cartItems, setCartItems] = useState(0);
-
-  const handleAddToCart = (product) => {
-    setCartItems((prev) => prev + 1);
-    alert(`${product.title} added to cart!`);
-  };
-
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Navbar cartItems={cartItems} />
-        <Routes>
-          <Route path="/" element={<ProductListing />} />
-          <Route
-            path="/product/:id"
-            element={<ProductDetails onAddToCart={handleAddToCart} />}
-          />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
-};
+    <div>
+      {/* <Card username="Ayeesha" age="19" description="student"/>
+      <Card username="mahek" age="18" description="student"/> */}
 
-export default App;
+    <Hook/>
+    </div>
+  )
+}
+     
+export default App
